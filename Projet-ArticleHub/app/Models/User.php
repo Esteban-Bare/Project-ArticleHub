@@ -16,9 +16,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'nom', // Changed from 'name' to 'nom' to match your database schema
+        'nom',
         'email',
         'password',
+        'role', // Add the role field here
     ];
 
     /**
@@ -63,5 +64,15 @@ class User extends Authenticatable
     public function likes()
     {
         return $this->hasMany(Like::class, 'utilisateur_id');
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isUser()
+    {
+        return $this->role === 'user';
     }
 }
