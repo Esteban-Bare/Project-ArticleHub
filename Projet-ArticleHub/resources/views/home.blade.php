@@ -2,7 +2,7 @@
 
 @extends('layouts.main')
 
-@section('title', 'Articles')
+@section('title', 'Home')
 
 @section('content')
     <p>ceci est le index</p>

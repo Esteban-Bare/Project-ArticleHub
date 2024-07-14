@@ -12,7 +12,8 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('titre');
             $table->text('contenu');
-            $table->dateTime('date_publication');
+            $table->text('small_description')->nullable();
+            $table->dateTime('date_publication')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->foreignId('utilisateur_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
@@ -23,4 +24,3 @@ class CreateArticlesTable extends Migration
         Schema::dropIfExists('articles');
     }
 }
-

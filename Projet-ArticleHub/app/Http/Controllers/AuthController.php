@@ -26,6 +26,10 @@ class AuthController extends Controller
     }
 
     public function logout() {
-        Session::forget(['userId, userEmail']);
+        Session::forget(['userId', 'userEmail']);
+
+        Auth::logout();
+
+        return redirect()->intended('/');
     }
 }
