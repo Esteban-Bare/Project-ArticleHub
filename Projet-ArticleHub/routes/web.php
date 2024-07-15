@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrationController;
@@ -27,3 +28,7 @@ Route::get('articles/create' , [ArticlesController::class, 'showCreateArticleVie
 Route::post('articles/create', [ArticlesController::class , 'createArticle'])->name('createArticle');
 
 Route::get('article/{id}', [ArticleController::class, 'showArticle'])->name('article.show');
+
+Route::post('/article/{id}/like', [ArticleController::class, 'like'])->name('article.like');
+
+Route::post('/article/{id}/comments', [CommentController::class, 'createComment'])->name('article.comment');

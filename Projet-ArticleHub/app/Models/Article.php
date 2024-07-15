@@ -26,6 +26,11 @@ class Article extends Model
         return $this->hasMany(Like::class, 'article_id');
     }
 
+    public function userHasLiked($userId)
+    {
+        return $this->likes()->where('utilisateur_id', $userId)->exists();
+    }
+
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'article_category', 'article_id', 'category_id');

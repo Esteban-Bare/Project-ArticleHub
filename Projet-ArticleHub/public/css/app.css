@@ -20,3 +20,56 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.article-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.article-meta {
+    text-align: right;
+}
+
+.article-meta p {
+    margin: 0;
+}
+
+.like-section {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.like-button {
+    cursor: pointer;
+    width: 24px; /* Adjust the size of the like button image */
+    height: 24px; /* Adjust the size of the like button image */
+    margin-right: 10px;
+}
+
+.comments-section {
+    margin-top: 20px;
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.comment h4 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.comment p {
+    margin: 0.5em 0;
+}

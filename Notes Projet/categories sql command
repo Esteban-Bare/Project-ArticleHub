@@ -1,0 +1,11 @@
+INSERT INTO categories (nom) VALUES 
+('Technology'),
+('Health'),
+('Science'),
+('Education'),
+('Sports'),
+('Entertainment'),
+('Business'),
+('Travel'),
+('Lifestyle'),
+('Food');
