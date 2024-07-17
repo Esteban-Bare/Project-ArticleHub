@@ -45,7 +45,7 @@ class User extends Authenticatable
     /**
      * Get the articles for the user.
      */
-    public function articles()
+    public function createdArticles()
     {
         return $this->hasMany(Article::class, 'utilisateur_id');
     }

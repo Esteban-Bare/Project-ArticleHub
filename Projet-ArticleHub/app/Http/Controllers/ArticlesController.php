@@ -8,9 +8,44 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-    public function showAllArticlesView() {
-        $articles = Article::all();
-        return view('articles.index')->with('articles', $articles);
+    public function showAllArticlesView(Request $request)
+    {
+        $query = Article::query();
+
+        // Check if a category is selected for sorting
+        if ($request->has('category')) {
+            $category = Category::where('nom', $request->category)->first();
+            if ($category) {
+                $query->whereHas('categories', function ($query) use ($category) {
+                    $query->where('category_id', $category->id);
+                });
+            }
+        }
+
+        // Handle sorting options
+        $sort = $request->query('sort');
+        switch ($sort) {
+            case 'oldest':
+                $query->orderBy('created_at', 'desc');
+                break;
+            case 'most-liked':
+                $query->withCount('likes')->orderByDesc('likes_count');
+                break;
+            default:
+                $query->orderBy('created_at', 'asc'); // Default to newest
+                break;
+        }
+
+        $articles = $query->paginate(12); // Adjust pagination as needed
+
+        $categories = Category::all();
+
+        return view('articles.index', [
+            'articles' => $articles,
+            'categories' => $categories,
+            'selectedCategory' => $request->category ?? null,
+            'sort' => $sort,
+        ]);
     }
 
     public function showCreateArticleView() {

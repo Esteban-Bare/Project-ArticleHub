@@ -11,7 +11,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'viewHome'])->name('home');
 
-Route::get('profile',[ProfileController::class, 'showProfileView']);
+Route::get('profile',[ProfileController::class, 'showProfileView'])->name('profile');
+
+Route::get('profile/liked', [ProfileController::class, 'showLikedArticles'])->name('profile.liked');
+Route::get('profile/articles', [ProfileController::class, 'showUserArticles'])->name('profile.articles');
+Route::delete('profile/articles/{id}', [ProfileController::class, 'deleteUserArticle'])->name('profile.articles.delete');
+
+Route::post('/profile/password/change', [ProfileController::class, 'changePassword'])->name('password.update');
 
 Route::resource('auth', RegistrationController::class);
 
@@ -21,7 +27,9 @@ Route::post('login', [AuthController::class, 'login'])->name('login');
 
 Route::post('logout' , [AuthController::class, 'logout'])->name('logout');
 
-Route::get('articles' , [ArticlesController::class, 'showAllArticlesView'])->name('articles');
+Route::get('articles' , [ArticlesController::class, 'showAllArticlesView'])->name('articles.index');
+
+Route::get('/articles/category/{category}', [ArticleController::class, 'showAllArticlesView'])->name('articles.category');
 
 Route::get('articles/create' , [ArticlesController::class, 'showCreateArticleView'])->name('articleCreate');
 
@@ -32,3 +40,5 @@ Route::get('article/{id}', [ArticleController::class, 'showArticle'])->name('art
 Route::post('/article/{id}/like', [ArticleController::class, 'like'])->name('article.like');
 
 Route::post('/article/{id}/comments', [CommentController::class, 'createComment'])->name('article.comment');
+
+Route::get('/search', [ArticleController::class, 'search'])->name('articles.search');

@@ -34,4 +34,16 @@ class ArticleController extends Controller
  
         
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        if ($query) {
+            $articles = Article::where('titre', 'LIKE', "%{$query}%")->get();
+            return response()->json($articles);
+        }
+
+        return response()->json([]);
+    }
 }

@@ -36,4 +36,25 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error:', error));
         });
     });
+
+    
 });
+
+async function searchArticles() {
+        const query = document.getElementById('search').value;
+        const searchResults = document.getElementById('search-results');
+        searchResults.innerHTML = '';
+
+        if (query.length < 2) {
+            return;
+        }
+
+        const response = await fetch(`/search?query=${query}`);
+        const articles = await response.json();
+
+        articles.forEach(article => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="/article/${article.id}">${article.titre}</a>`;
+            searchResults.appendChild(li);
+        });
+    }

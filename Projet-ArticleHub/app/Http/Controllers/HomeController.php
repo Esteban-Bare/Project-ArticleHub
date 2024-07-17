@@ -2,12 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function viewHome() {
-        return view('home');
+        // Fetch 5 random articles
+        $randomArticles = Article::inRandomOrder()->take(5)->get();
+
+        // Fetch a random category
+        $category = Category::inRandomOrder()->first();
+
+        if ($category) {
+            // Fetch 5 articles from the random category
+            $categoryArticles = $category->articles()->take(5)->get();
+        } else {
+            $categoryArticles = collect(); // Empty collection if no category found
+        }
+
+        // Fetch 5 newest articles
+        $newestArticles = Article::orderBy('created_at', 'asc')->take(5)->get();
+
+        return view('home', compact('randomArticles', 'category', 'categoryArticles', 'newestArticles'));
     }
 
     public function viewTry() {
