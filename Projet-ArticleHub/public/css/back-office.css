@@ -1,0 +1,207 @@
+/* CSS for the Administrator Page */
+.admin-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.admin-container a {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-container a:hover {
+    background-color: #0056b3;
+}
+
+.admin-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-container ul li {
+    margin: 10px 0;
+}
+
+.admin-container ul li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-container ul li a:hover {
+    background-color: #218838;
+}
+
+/* CSS for the All Users Page */
+.all-users-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.all-users-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.all-users-container a {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.all-users-container a:hover {
+    background-color: #0056b3;
+}
+
+.all-users-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.all-users-container ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex-wrap: wrap;
+}
+
+.all-users-container ul li > div {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+}
+
+.all-users-container ul li form {
+    margin: 0;
+}
+
+.all-users-container ul li button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.all-users-container ul li button:hover {
+    background-color: #c82333;
+}
+
+/* CSS for the All Articles Page */
+.all-articles-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.all-articles-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.all-articles-container a {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.all-articles-container a:hover {
+    background-color: #0056b3;
+}
+
+.all-articles-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.all-articles-container ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex-wrap: wrap;
+}
+
+.all-articles-container ul li .article-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-articles-container ul li .article-info span {
+    margin-right: 10px;
+}
+
+.all-articles-container ul li .delete-form {
+    display: inline;
+}
+
+.all-articles-container ul li button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.all-articles-container ul li button:hover {
+    background-color: #c82333;
+}

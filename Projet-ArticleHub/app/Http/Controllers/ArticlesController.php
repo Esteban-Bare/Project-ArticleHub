@@ -26,13 +26,13 @@ class ArticlesController extends Controller
         $sort = $request->query('sort');
         switch ($sort) {
             case 'oldest':
-                $query->orderBy('created_at', 'desc');
+                $query->orderBy('date_publication', 'asc');
                 break;
             case 'most-liked':
                 $query->withCount('likes')->orderByDesc('likes_count');
                 break;
             default:
-                $query->orderBy('created_at', 'asc'); // Default to newest
+                $query->orderBy('date_publication', 'desc'); // Default to newest
                 break;
         }
 
@@ -69,6 +69,6 @@ class ArticlesController extends Controller
 
         $article->categories()->attach($request->categories);
 
-        return redirect()->route('articles')->with('success', 'Article created successfully.');
+        return redirect()->route('articles.index')->with('success', 'Article created successfully.');
     }
 }

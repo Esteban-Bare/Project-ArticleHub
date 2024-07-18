@@ -215,32 +215,20 @@ ul li {
     }
 }
 
-footer {
-    background: linear-gradient(to right, #003366 0%, #004D99 27%, #0066CC 73%);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%; /* Ensure footer spans full width */
-}
-
-/* app.css */
-
-/* app.css */
-
 .article-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Automatically fit items, but min 250px and max full width */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 20px;
 }
 
 .article-item {
     border: 1px solid #ccc;
     border-radius: 8px;
-    overflow: hidden; /* Ensures content doesn't overflow the border */
+    overflow: hidden; 
 }
 
 .article-item:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds shadow on hover for interaction */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 .article-item a {
@@ -332,15 +320,13 @@ form button:hover {
     border-color: #ddd;
 }
 
-/* Custom ArticleHub Styles */
-
 .ah-welcome-heading, .ah-subheading, .ah-section-heading, .ah-info-text {
     text-align: center;
 }
 
 .ah-article-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Five articles per row */
+    grid-template-columns: repeat(5, 1fr); 
     gap: 20px;
     margin-bottom: 40px;
 }
@@ -451,246 +437,4 @@ form button:hover {
 
 #search-results li:hover {
     background-color: #f0f0f0;
-}
-
-.liked-articles-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-}
-
-.liked-article-card {
-    border: 1px solid #ddd;
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.liked-article-card .liked-article-title {
-    margin-top: 0;
-    font-size: 1.8em;
-}
-
-.liked-article-card .liked-article-description {
-    color: #666;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-.liked-article-card .liked-read-more-link {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.liked-article-card .liked-read-more-link:hover {
-    background-color: #0056b3;
-}
-
-.profile-content {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.profile-greeting {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.password-change-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.password-change-form h2 {
-    margin-top: 0;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.password-change-form form {
-    text-align: left;
-}
-
-.password-change-form label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.password-change-form input[type="password"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.password-change-form input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.password-change-form input[type="email"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.password-change-form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.password-change-form h1 {
-    text-align: center;
-}
-
-.password-change-form button:hover {
-    background-color: #0056b3;
-}
-
-.profile-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-.profile-links li {
-    background-color: #007BFF;
-    margin: 10px 0;
-    padding: 10px 20px;
-    border-radius: 4px;
-    display: inline-block;
-}
-
-.profile-links li a {
-    text-decoration: none;
-    color: #f1f1f1;
-}
-
-.profile-links li a:hover {
-    text-decoration: underline;
-}
-
-/* Form-specific styles */
-.register-form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: linear-gradient(to bottom, #14375A 0%, #1F548A 84%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #fff; /* Ensuring text color is readable on dark background */
-}
-
-.register-form h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.register-form label {
-    display: block;
-    margin-bottom: 8px;
-    color: #fff; /* Label text color */
-}
-
-.register-form input[type="text"],
-.register-form input[type="email"],
-.register-form input[type="password"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    background-color: #fff; /* Input background color */
-    color: #333; /* Input text color */
-}
-
-.register-form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-}
-
-.register-form button:hover {
-    background-color: #0056b3;
-}
-
-.login-form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: linear-gradient(to bottom, #14375A 0%, #1F548A 84%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #fff; /* Ensuring text color is readable on dark background */
-}
-
-.login-form h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.login-form label {
-    display: block;
-    margin-bottom: 8px;
-    color: #fff; /* Label text color */
-}
-
-.login-form input[type="email"],
-.login-form input[type="password"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    background-color: #fff; /* Input background color */
-    color: #333; /* Input text color */
-}
-
-.login-form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-}
-
-.login-form button:hover {
-    background-color: #0056b3;
 }

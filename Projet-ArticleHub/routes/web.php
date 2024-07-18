@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\AuthController;
@@ -18,6 +19,12 @@ Route::get('profile/articles', [ProfileController::class, 'showUserArticles'])->
 Route::delete('profile/articles/{id}', [ProfileController::class, 'deleteUserArticle'])->name('profile.articles.delete');
 
 Route::post('/profile/password/change', [ProfileController::class, 'changePassword'])->name('password.update');
+
+Route::get('/admin', [AdminController::class, 'showAdminView'])->name('admin.view');
+Route::get('/admin/users', [AdminController::class, 'showUsers'])->name('admin.users');
+Route::get('/admin/articles', [AdminController::class, 'showArticles'])->name('admin.articles');
+Route::delete('/admin/articles/{id}', [AdminController::class, 'deleteArticle'])->name('admin.deleteArticle');
+Route::delete('/admin/users/{id}', [AdminController::class, 'deleteUser'])->name('admin.deleteUser');
 
 Route::resource('auth', RegistrationController::class);
 

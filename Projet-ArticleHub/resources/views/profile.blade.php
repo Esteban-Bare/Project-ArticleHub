@@ -12,6 +12,12 @@
         @csrf
         <button type="submit">Logout</button>
     </form>
+    @if ($user->role === "admin") 
+    <form action="{{ route('admin.view') }}" method="get">
+        @csrf
+        <button type="submit">Back-office</button>
+    </form>
+    @endif
 
     <div class="password-change-form">
         <h2>Change Password</h2>
