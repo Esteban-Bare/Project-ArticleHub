@@ -9,15 +9,61 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function showAdminView() {
+        $userId = session('userId');
+
+        if (!$userId) {
+            return redirect()->route('auth.login')->with('error', 'You must be logged in to view this page.');
+        }
+
+        $user = User::find($userId);
+
+        if (!$user) {
+            return redirect()->route('home')->with('error', 'User not found.');
+        }
+
+        if ($user->role !== "admin") {
+            return redirect()->route('home')->with('error', 'User not found.');
+        }
+
         return view('admin.index');
     }
 
     public function showUsers() {
+        $userId = session('userId');
+
+        if (!$userId) {
+            return redirect()->route('auth.login')->with('error', 'You must be logged in to view this page.');
+        }
+
+        $user = User::find($userId);
+
+        if (!$user) {
+            return redirect()->route('home')->with('error', 'User not found.');
+        }
+
+        if ($user->role !== "admin") {
+            return redirect()->route('home')->with('error', 'User not found.');
+        }
         $users = User::all();
         return view('admin.users', compact('users'));
     }
 
     public function showArticles() {
+        $userId = session('userId');
+
+        if (!$userId) {
+            return redirect()->route('auth.login')->with('error', 'You must be logged in to view this page.');
+        }
+
+        $user = User::find($userId);
+
+        if (!$user) {
+            return redirect()->route('home')->with('error', 'User not found.');
+        }
+
+        if ($user->role !== "admin") {
+            return redirect()->route('home')->with('error', 'User not found.');
+        }
         $articles = Article::all();
         return view('admin.articles', compact('articles'));
     }
