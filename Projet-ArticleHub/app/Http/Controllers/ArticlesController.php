@@ -12,7 +12,6 @@ class ArticlesController extends Controller
     {
         $query = Article::query();
 
-        // Check if a category is selected for sorting
         if ($request->has('category')) {
             $category = Category::where('nom', $request->category)->first();
             if ($category) {
@@ -22,7 +21,6 @@ class ArticlesController extends Controller
             }
         }
 
-        // Handle sorting options
         $sort = $request->query('sort');
         switch ($sort) {
             case 'oldest':
@@ -32,11 +30,11 @@ class ArticlesController extends Controller
                 $query->withCount('likes')->orderByDesc('likes_count');
                 break;
             default:
-                $query->orderBy('date_publication', 'desc'); // Default to newest
+                $query->orderBy('date_publication', 'desc'); 
                 break;
         }
 
-        $articles = $query->paginate(12); // Adjust pagination as needed
+        $articles = $query->paginate(12);
 
         $categories = Category::all();
 
@@ -65,7 +63,7 @@ class ArticlesController extends Controller
             'utilisateur_id' => 'required|exists:users,id',
         ]);
 
-        $article = Article::create($request->only(['titre','contenu','small_description','utilisateur_id', 'date_publication8']));
+        $article = Article::create($request->only(['titre','contenu','small_description','utilisateur_id', 'date_publication']));
 
         $article->categories()->attach($request->categories);
 

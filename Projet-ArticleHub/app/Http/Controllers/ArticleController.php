@@ -20,11 +20,10 @@ class ArticleController extends Controller
 
         if ($userId) {
             if ($article->likes()->where('utilisateur_id', $userId)->exists()) {
-            // If the user already liked the article, remove the like
+            
             $article->likes()->where('utilisateur_id', $userId)->delete();
             return response()->json(['status' => 'unliked']);
         } else {
-            // Otherwise, add a like
             $article->likes()->create(['utilisateur_id' => $userId]);
             return response()->json(['status' => 'liked']);
         }

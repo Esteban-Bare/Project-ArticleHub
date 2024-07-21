@@ -28,21 +28,18 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the request data
         $request->validate([
             'nom' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        // Create a new user
         $user = User::create([
             'nom' => $request->input('nom'),
             'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password')), // Encrypt the password
+            'password' => bcrypt($request->input('password')),
         ]);
 
-        // Redirect to a success page or back to the form with a success message
         return redirect()->route('auth.login')->with('success', 'Registration successful!');
     }
 

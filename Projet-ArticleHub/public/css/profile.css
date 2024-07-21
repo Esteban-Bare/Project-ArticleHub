@@ -1,150 +1,94 @@
-.liked-articles-container {
+/* General styles */
+.ma-container {
     max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-}
-
-.liked-article-card {
-    border: 1px solid #ddd;
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.liked-article-card .liked-article-title {
-    margin-top: 0;
-    font-size: 1.8em;
-}
-
-.liked-article-card .liked-article-description {
-    color: #666;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-.liked-article-card .liked-read-more-link {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.liked-article-card .liked-read-more-link:hover {
-    background-color: #0056b3;
-}
-
-.profile-content {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.profile-content a {
-    background-color: #007BFF;
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    border-radius: 4px;
-}
-
-.profile-greeting {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.password-change-form {
-    max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-family: Arial, sans-serif;
     background-color: #f9f9f9;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ma-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.ma-alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
     margin-bottom: 20px;
 }
 
-.password-change-form h2 {
-    margin-top: 0;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.password-change-form form {
-    text-align: left;
-}
-
-.password-change-form label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.password-change-form input[type="password"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.password-change-form input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.password-change-form input[type="email"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.password-change-form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.password-change-form h1 {
-    text-align: center;
-}
-
-.password-change-form button:hover {
-    background-color: #0056b3;
-}
-
-.profile-links {
+.ma-alert ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
-.profile-links li {
-    background-color: #007BFF;
-    margin: 10px 0;
-    padding: 10px 20px;
+.ma-alert li {
+    margin: 5px 0;
+}
+
+.ma-form-group {
+    margin-bottom: 15px;
+}
+
+.ma-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.ma-form-group input[type="text"],
+.ma-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    display: inline-block;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
 }
 
-.profile-links li a {
-    text-decoration: none;
-    color: #f1f1f1;
+.ma-form-group input[type="text"]:focus,
+.ma-form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
-.profile-links li a:hover {
-    text-decoration: underline;
+.ma-form-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.ma-form-group div {
+    display: flex;
+    align-items: center;
+}
+
+.ma-form-group div label {
+    margin-left: 5px;
+    color: #333;
+}
+
+.ma-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.ma-button:hover {
+    background-color: #0056b3;
 }
